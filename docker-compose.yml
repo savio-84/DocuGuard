@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: docuguard-postgres
+    restart: no
+    volumes:
+      - pgdata:/usr/postgres
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=docuguard
+      - POSTGRES_PASSWORD=b94177981ca4c1ac87612a2b6a9aa93be069e351
+      - POSTGRES_DB=docuguard
+
+volumes:
+  pgdata:
+    driver: local
